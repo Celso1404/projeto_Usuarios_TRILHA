@@ -12,6 +12,13 @@ var fields = document.querySelectorAll("#form-user-create [name]"); //puxa todos
 
 fields.forEach(function(field, index){
 
-    console.log(field.id, field.name, field.ariaValueMax, index)
+    if (field.name == "gender" && field.checked) {
+
+        console.log("SIM", field)
+
+    } else {
+
+        console.log("Não")
+    }
 
 });
