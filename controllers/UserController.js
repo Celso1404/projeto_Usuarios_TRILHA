@@ -141,9 +141,8 @@ class UserController {
 
     this.tableEl.appendChild(tr);
 
-    this.updateCount();
-                    
-    }
+    this.updateCount();   
+}
 
     updateCount() {
 
