@@ -93,8 +93,7 @@ class UserController {
             let file = elements[0].files[0];
 
             fileReader.onload = ()=> {
-            resolve(fileReader.result);
-
+                resolve(fileReader.result);
             };
 
             fileReader.oneError = ()=> {
@@ -104,7 +103,7 @@ class UserController {
             if (file) {
                 fileReader.readAsDataURL(file);
                 } else {
-                 resolve('dist/img/boxed-bg.jpg');
+                    resolve('dist/img/boxed-bg.jpg');
                 }
         });
     }
@@ -149,10 +148,10 @@ class UserController {
     }
 
     addLine(dataUser) { 
-    let tr = this.getTr(dataUser);
-    this.tableEl.appendChild(tr); 
-    this.updateCount();   
-}
+        let tr = this.getTr(dataUser);
+        this.tableEl.appendChild(tr); 
+        this.updateCount();   
+    }
 
     getTr(dataUser, tr = null) {
         if (tr === null) tr = document.createElement('tr');
