@@ -59,9 +59,7 @@ class User {
     }
 
     loadFromJSON(json) {
-
         for(let name in json) {
-
             switch(name) {
               case '_register':
                 this[name] = new Date(json[name]);
@@ -74,36 +72,30 @@ class User {
 
      static getUsersStorage() {
          let users = [];
-
-        if (localStorage.getItem("users")) {
-            users = JSON.parse(localStorage.getItem("users"));
-        }
+            if (localStorage.getItem("users")) {
+                users = JSON.parse(localStorage.getItem("users"));
+            }
         return users;
     }
 
     getNewID() {
-
     let usersID = parseInt(localStorage.getItem("UsersID"));
 
        if (!usersID > 0) usersID = 0;
-
+       
        usersID++;
-
        localStorage.setItem("usersID", usersID);
-
        return usersID;
     }
 
     save() {
-
         let users = User.getUsersStorage();
 
         if (this.id > 0) {
             users.map(u=> {
                if(u._id == this.id) {
-                Object.assign(u, this);
-            }
-               
+                 Object.assign(u, this);
+                }   
                 return u; 
             })
 
@@ -115,7 +107,6 @@ class User {
     }  
 
     remove() {
-
       let users = User.getUsersStorage();
       
         users.forEach((userData, index)=> {
